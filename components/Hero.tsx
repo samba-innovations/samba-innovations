@@ -29,6 +29,14 @@ const products = [
     href: "https://flourish.escolacabral.com.br",
     badgeClass: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
   },
+  {
+    name: "samba paper",
+    tagline: "Documentos Pedagógicos",
+    description: "Gerador de planos de aula, guias, PEI, eletivas, EMA, projetos e PDI.",
+    logo: "/imgs/paper-logo1.svg",
+    href: "https://paper.escolacabral.com.br",
+    badgeClass: "bg-pink-500/10 text-pink-500 border-pink-500/20",
+  },
 ];
 
 export function Hero() {
@@ -209,7 +217,7 @@ export function Hero() {
                   <CheckCircle2 size={16} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-foreground">3 produtos ativos</div>
+                  <div className="text-xs font-bold text-foreground">4 produtos ativos</div>
                   <div className="text-[10px] text-muted-foreground">samba innovations</div>
                 </div>
               </motion.div>
