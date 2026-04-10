@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Sparkles, ShieldAlert } from "lucide-react";
 
 const products = [
   {
@@ -36,6 +36,15 @@ const products = [
     logo: "/imgs/paper-logo1.svg",
     href: "https://paper.escolacabral.com.br",
     badgeClass: "bg-pink-500/10 text-pink-500 border-pink-500/20",
+  },
+  {
+    name: "samba control",
+    tagline: "Gestão Escolar",
+    description: "Gestão centralizada do banco mestre: professores, alunos, turmas e disciplinas.",
+    logo: "/imgs/control-logo1.svg",
+    href: "https://control.escolacabral.com.br",
+    badgeClass: "bg-red-500/10 text-red-500 border-red-500/20",
+    coordinatorOnly: true,
   },
 ];
 
@@ -185,6 +194,12 @@ export function Hero() {
                         </span>
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">{product.description}</p>
+                      {"coordinatorOnly" in product && product.coordinatorOnly && (
+                        <div className="flex items-center gap-1 mt-2 text-[10px] font-bold text-red-500">
+                          <ShieldAlert size={11} strokeWidth={2} />
+                          Exclusivo para coordenadores
+                        </div>
+                      )}
                     </div>
                     <ExternalLink size={15} className="text-muted-foreground/30 group-hover:text-muted-foreground transition-colors shrink-0 mt-1" />
                   </motion.a>
@@ -217,7 +232,7 @@ export function Hero() {
                   <CheckCircle2 size={16} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-foreground">4 produtos ativos</div>
+                  <div className="text-xs font-bold text-foreground">5 produtos ativos</div>
                   <div className="text-[10px] text-muted-foreground">samba innovations</div>
                 </div>
               </motion.div>
